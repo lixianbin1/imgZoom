@@ -1,0 +1,27 @@
+{
+  "name": "imgzoom",
+  "version": "0.2.0",
+  "description": "一个可以查看图片(可以缩放，拖拽)的JS插件",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel js -d lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lixianbin1/imgZoom.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lixianbin1/imgZoom/issues"
+  },
+  "homepage": "https://github.com/lixianbin1/imgZoom#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.10.1"
+  }
+}
