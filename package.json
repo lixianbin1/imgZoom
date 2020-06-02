@@ -4,7 +4,8 @@
   "description": "一个可以查看图片(可以缩放，拖拽)的JS插件",
   "main": "index.js",
   "scripts": {
-    "build": "babel js -d lib"
+    "build": "babel JS -d lib && uglifyjs ./lib/imgZoom.js -o ./lib/imgZoom.min.js -c -m --ie8",
+    "start":"babel start.js -o starts.js && uglifyjs starts.js -o starts.min.js -c -m --ie8"
   },
   "repository": {
     "type": "git",
