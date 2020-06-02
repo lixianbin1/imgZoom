@@ -1,7 +1,7 @@
 # imgZoom
 一个可以查看图片(可以缩放，拖拽)的JS插件，无需引入额外 js 插件，简洁，方便，兼容
 
-[Image text](./Img/202006011.jpg?imageView/2/w/960/q/540)
+[Image text](./Img/202006011.jpg)
 
 # 在线预览
 
