@@ -2,10 +2,11 @@
   "name": "imgzoom",
   "version": "0.3.0",
   "description": "一个可以查看图片(可以缩放，拖拽)的JS插件",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "build": "babel JS -d lib && uglifyjs ./lib/imgZoom.js -o ./lib/imgZoom.min.js -c -m --ie8",
-    "start":"babel start.js -o starts.js && uglifyjs starts.js -o starts.min.js -c -m --ie8"
+    "build": "webpack -p",
+    "start": "node start.min.js",
+    "server": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -20,9 +21,19 @@
   "devDependencies": {
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
-    "@babel/preset-env": "^7.10.2"
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "file-loader": "^6.0.0",
+    "html-loader": "^1.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.10.1"
+    "@babel/polyfill": "^7.10.1",
+    "babel-polyfill": "^6.26.0",
+    "html-webpack-plugin": "^4.3.0"
   }
 }

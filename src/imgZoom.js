@@ -11,7 +11,6 @@ var imgZoom = (function(){
     if (img.width == "auto") {
       imgwidth = 1000;
     }
-
     var body = document.getElementsByTagName('body')[0];
     var imgb = document.createElement('div');
     body.appendChild(imgb);
@@ -25,6 +24,7 @@ var imgZoom = (function(){
     }
   }
 
+  //打开窗口
   function open(event) {
     if (event && event.src) {
       var imgz = document.getElementById('_imgzoom');
@@ -48,17 +48,19 @@ var imgZoom = (function(){
     } else {
       console.error('缺少参数 src:Missing parameters "src"');
     }
-  } //绑定事件
+  } 
 
 
+  //绑定事件
   function bing() {
     lastnext('last');
     lastnext('next');
     mouseWheel();
     imgMove();
-  } //前进后退
+  }
 
 
+  //前进后退
   function lastnext(name) {
     var dom = document.getElementById('_imgzoom').getElementsByClassName(name)[0];
     dom.addEventListener('mousemove', function () {
@@ -96,9 +98,9 @@ var imgZoom = (function(){
         }
       }
     });
-  } //滚轮事件
+  } 
 
-
+  //滚轮事件
   function mouseWheel() {
     var dom = document.getElementById('_imgzoom');
     dom.addEventListener('mousewheel', function (event) {
@@ -109,35 +111,33 @@ var imgZoom = (function(){
       event.preventDefault();
       Detail(event, dom);
     });
-  } //放大缩小
+  } 
 
-
+  //放大缩小
   function Detail(e, dom) {
     if (e.deltaY > 0) {
       var w = Math.round(dom.offsetWidth * 0.9);
       var h = Math.round(dom.offsetHeight * 0.9);
-
       if (w > 360 || h > 270) {
         dom.style.width = w + 'px';
       }
     } else {
       var _w = Math.round(dom.offsetWidth * 1.1);
-
       var _h = Math.round(dom.offsetHeight * 1.1);
-
       if (_w < 82500 || _h < 46500) {
         dom.style.width = _w + 'px';
       }
     }
-  } //优化显示：调整大小
+  } 
 
-
-  function resize() {
+  //优化显示：调整大小
+  function resize(event) {
+    event=event||window.event
+    event.preventDefault? event.preventDefault(): event.returnValue = false;
     var url = document.getElementById('net').src;
     var dom = document.getElementById('_imgzoom');
     var img = new Image();
     img.src = url;
-
     if (img.complete) {
       size();
     } else {
@@ -145,24 +145,21 @@ var imgZoom = (function(){
         size();
       };
     }
-
     function size() {
       var x = window.innerWidth / window.innerHeight;
       var y = img.width / img.height;
-
       if (x >= y) {
         var num = (window.innerHeight - 70) * img.width / img.height;
         dom.style.width = num + 'px';
       } else {
         dom.style.width = window.innerWidth - 40 + 'px';
       }
-
       dom.style.top = "50%";
       dom.style.left = "50%";
     }
-  } //移动事件 
+  } 
 
-
+  //移动事件 
   function imgMove() {
     var dom = document.getElementById('_imgzoom');
     var screenX, screenY;
@@ -175,7 +172,6 @@ var imgZoom = (function(){
     window.addEventListener('mouseup', function (e) {
       window.removeEventListener('mousemove', position);
     });
-
     function position(e) {
       var x = e.screenX - screenX;
       var y = e.screenY - screenY;
@@ -186,48 +182,43 @@ var imgZoom = (function(){
       dom.style.top = top + y + 'px';
       dom.style.left = left + x + 'px';
     }
-  } //设置选项
+  } 
 
-
+  //设置选项
   function option(e) {
     if (e && e.width) {
       img.width = e.width;
     }
-  } //关闭窗口
+  } 
 
-
+  //关闭窗口
   function hideMenu() {
     var _imgzoom = document.getElementById('_imgzoom');
-
     if (_imgzoom) {
       _imgzoom.parentElement.style.display = "none";
     }
   }
-
   var img = {
     width: 'auto',
     top: '50%',
     left: '50%'
   };
-
   if (isPE()) {
     console.warn('手机端兼容性未适配，可能出现未知错误！！');
   }
-
+  
+  // 添加点击监控
   document.addEventListener('click', function (event) {
     var even = event || window.event;
     var target = even.target || even.srcElement;
-
     if (target.nodeName == "IMG" && target.className == "imgZoom") {
       open(target);
     }
-
     if (target.className == "imgzoom_shadow" || target.className == "imgzoom_close") {
       hideMenu();
     }
-
     if (target.className == "imgzoom_resize") {
-      resize();
+      resize(event);
     }
   });
   return{
