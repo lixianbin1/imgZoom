@@ -115,7 +115,8 @@ var imgZoom = (function(){
 
   //放大缩小
   function Detail(e, dom) {
-    if (e.deltaY > 0) {
+    e=e||window.event
+    if (e.wheelDelta > 0) {
       var w = Math.round(dom.offsetWidth * 0.9);
       var h = Math.round(dom.offsetHeight * 0.9);
       if (w > 360 || h > 270) {
