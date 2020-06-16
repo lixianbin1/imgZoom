@@ -3,8 +3,6 @@
 
 <img style="vertical-align: top;" src="./lib/202006011.jpg?raw=true" alt="预览" >
 
-[Image text](./lib/202006011.jpg)
-
 # 在线预览
 
 在线预览 https://lixianbin1.github.io/imgZoom/
