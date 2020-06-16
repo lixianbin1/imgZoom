@@ -1,6 +1,8 @@
 # imgZoom
 一个可以查看图片(可以缩放，拖拽)的JS插件，无需引入额外 js 插件，简洁，方便，兼容
 
+<img style="vertical-align: top;" src="./lib/202006011.jpg?raw=true" alt="预览" >
+
 [Image text](./lib/202006011.jpg)
 
 # 在线预览
@@ -86,4 +88,4 @@ img.close()
 
 # 兼容性
 
-目前 IE11+ ,手机端目前也未兼容，后面再考虑向后兼容。
+目前 IE9+ ,手机端目前未兼容，后面再考虑向后兼容。
