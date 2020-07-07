@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 module.exports = {
-  entry: './src/imgZoom.js',//["babel-polyfill",'./src/imgZoom.js'],
+  entry: ["babel-polyfill",'./src/imgZoom.js'],
   output: { // 输出
     filename: 'imgZoom.js',
     path: path.resolve(__dirname, 'static') // __dirname 当前路径的绝对路径
