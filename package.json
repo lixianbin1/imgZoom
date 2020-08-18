@@ -1,8 +1,8 @@
 {
   "name": "imgzoom",
-  "version": "0.3.0",
+  "version": "0.4.1",
   "description": "一个可以查看图片(可以缩放，拖拽)的JS插件",
-  "private": true,
+  "main":"./src/imgZoom.js",
   "scripts": {
     "build": "webpack -p",
     "start": "node start.min.js",
@@ -38,5 +38,5 @@
     "@babel/polyfill": "^7.10.1",
     "babel-polyfill": "^6.26.0",
     "html-webpack-plugin": "^4.3.0"
-  }
+  },
 }
