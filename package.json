@@ -1,5 +1,5 @@
 {
-  "name": "img-zoom",
+  "name": "imgzoom-li",
   "version": "0.4.1",
   "description": "一个可以查看图片(可以缩放，拖拽)的JS插件",
   "main": "./src/imgZoom.js",
@@ -26,9 +26,7 @@
     "url": "https://github.com/lixianbin1/imgZoom/issues"
   },
   "homepage": "https://github.com/lixianbin1/imgZoom#readme",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
+
   "devDependencies": {},
   "dependencies": {}
 }
