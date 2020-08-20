@@ -1,3 +1,6 @@
-import imgZoom from './imgZoom.js'
+// import imgli from 'imgzoom-li'
+// imgli.init()
 
-imgZoom.init()
+import imgli from './imgZoom.min.js'
+imgli.init()
+console.log(imgli)
