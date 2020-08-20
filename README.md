@@ -1,7 +1,7 @@
-# imgZoom
+# imgzoom-li
 一个可以查看图片(可以缩放，拖拽)的JS插件，无需引入额外 js 插件，简洁，方便，兼容
 
-<img style="vertical-align: top;" src="./src/202006011.jpg?raw=true" alt="预览" >
+<img style="vertical-align: top;" src="https://raw.githubusercontent.com/lixianbin1/imgZoom/master/lib/202006011.jpg" alt="预览" >
 
 # 在线预览
 
@@ -9,11 +9,10 @@
 
 # 简单使用
 
->下载 imgzoom.js 文件
+安装 imgzoom-li
 
-引入js文件
 ```
-<script type="text/javascript" src="./imgZoom.min.js"></script>
+npm install imgzoom-li
 ```
 
 在需要查看的图片上添加 class="imgZoom"
@@ -21,69 +20,113 @@
 <img class="imgZoom" src="./Img/202001034.png" alt="示例图片" >
 ```
 
-在 script 中使用，接下来就可以查看所有imgzoom图片了
+在 script 中使用
 ```
-var imgz=new imgZoom()
+import imgli from 'imgzoom-li'
+imgli.init()
 ```
 
 # 全局配置
 
-## width:string
+## width:string/number
 
-调整打开窗口的宽度
+调整打开窗口的宽度;默认宽度为 1000px
 
 示例：
 ```
-const img=new imgZoom()
-let obj={
+import imgli from 'imgzoom-li'
+const imgobj=imgli.init()
+const obj={
   width:"1000"
 }
-img.option=obj
+imgobj.setOption=obj
 ```
 
+## top:string
+
+调整打开窗口中心的 top 定位;默认 top 为 50%
+
+示例：
+```
+import imgli from 'imgzoom-li'
+const imgobj=imgli.init()
+const obj={
+  top:"50%"
+}
+imgobj.setOption=obj
+```
+
+## left:string
+
+调整打开窗口中心的 left 定位;默认 left 为 50%
+
+示例：
+```
+import imgli from 'imgzoom-li'
+const imgobj=imgli.init()
+const obj={
+  left:"50%"
+}
+imgobj.setOption=obj
+```
 
 # 全局API
 
-## imgZoom.open
+## imgzoomLi.init
 
->imgZoom.open(target)
+>imgzoomLi.init()
 
-可以用于打开指定 img 图片；img可以无需指定 class
+初始化 imgzoom-li 实例；
 
 示例：
 ```
-const img=new imgZoom()
+const imgzom=imgli.init()
+```
+
+## imgzoomLi.setOption
+
+>imgzoomLi.setOption()
+
+全局配置，用于设置imgzoom-li 的全局配置。
+
+示例：
+```
+const imgzom=imgli.init()
+
+imgzom.setOption({
+    width:1000,
+    top:'50%',
+    left:'50%' 
+})
+```
+
+## imgzoomLi.open
+
+>imgzoomLi.open(target)
+
+可以用于打开指定 img 图片；img可以无需指定 class 为 imgZoom
+
+示例：
+```
+const imgzom=imgli.init()
+
 const dome=document.getElementsByClassName('dome')[0]
-
-img.open(dome)
+imgzom.open(dome)
 ```
 
-## imgZoom.resize
+## imgzoomLi.close
 
->imgZoom.resize()
+>imgzoomLi.close()
 
-可以用于调整打开窗口的大小。达到优化展示的效果
+可以用于关闭打开窗口。
 
 示例：
 ```
-const img=new imgZoom()
+const imgzom=imgli.init()
 
-img.resize()
-```
-
-## imgZoom.close
-
->imgZoom.close()
-
-可以用于关闭打开的窗口
-
-示例：
-```
-const img=new imgZoom()
-
-img.close()
+imgzom.close()
 ```
 
 # 兼容性
 
-目前 IE9+ ,手机端目前未兼容，后面再考虑向后兼容。
+目前 IE9+ ,手机端目前未测试，后面再考虑向后兼容。

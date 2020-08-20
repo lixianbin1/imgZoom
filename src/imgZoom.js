@@ -1,27 +1,65 @@
 /*!
- * imgZoom JavaScript Library v0.4.1
- * Date: 2020-08-18 15:18
+ * imgZoom JavaScript Library v0.5.1
+ * Date: 2020-08-20 17:30
  */
-  "use strict";
-  var img = {
-    width: 'auto',
-    top: '50%',
-    left: '50%'
+"use strict";
+var imgZoom=(function(){
+  var imgObj;
+  let width="auto",left="50%",top="50%"
+  if (isPE()) {
+    console.warn('手机端兼容性未适配，可能出现未知错误！！');
   };
+
+  //设置全局配置option
+  function setOption(obj){
+    if(obj&&obj.width){
+      let wid=parseFloat(obj.width)
+      width=wid
+    }
+    if(obj&&obj.left){
+      var path = new RegExp(/^(100|[1-9]?\d(\.\d\d?)?)%$/);
+      let isb=path.test(obj.left)
+      if(isb){
+        left=obj.left
+      }
+    }
+    if(obj&&obj.top){
+      var path = new RegExp(/^(100|[1-9]?\d(\.\d\d?)?)%$/);
+      let isb=path.test(obj.top)
+      if(isb){
+        top=obj.top
+      }
+    }
+    return{
+      width,left,top
+    }
+  };
+
   //判断是否在电脑端
   function isPE() {
     return /Android|webOS|iPhone|ipod|ipad|BlackBerry/i.test(navigator.userAgent);
   }
+  //判断class字符串是否存在imgzoom
+  function inStr(str,string){
+    let isin=false
+    let arr=str.split(' ')
+    for(let i in arr){
+      if(arr[i]==string){
+        isin=true
+      }
+    }
+    return isin
+  }
   //创建函数
   function create(url) {
-    var imgwidth = img.width;
-    if (img.width == "auto") {
+    var imgwidth = width,imgleft=left,imgtop=top
+    if (width == "auto") {
       imgwidth = 1000;
     }
     var body = document.getElementsByTagName('body')[0];
     var imgb = document.createElement('div');
     body.appendChild(imgb);
-    imgb.innerHTML = '<div id="_imgzoom" style="width:' + imgwidth + 'px;position:fixed;top:50%;left:50%;transform: translate(-50%,-50%);background:#fff;z-index: 1;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select:       none;padding:5px 10px 25px;"><div class="header" style=""><p style="margin:0;padding:8px 0">滚动滚轮缩放图片<span style="float:right"><a id="imgzoom_imglink" class="imgzoom_imglink" target="_blank" title="在新窗口打开" href="' + url + '" style="background: url(data:image/gif;base64,R0lGODlhYQA4AKIAAAAAAP///0SXzJmZmf///wAAAAAAAAAAACH5BAEAAAQALAAAAABhADgAAAP/SLo7/o7JSRW8uOqKeyQdGG6k6I2ldq4ZA6XbR8rw9MyX+tZURDcDEa8XLO2Iwd9QWOwJl65m7Ia0SKFKIjQK7Fqz1OdWjMryZLfwkesdo1viLS0HNI919aMd9gt/r1p3ZHB7KXNraxyAS290cVhNaY2LEoWGlJWYfJGceUaamyAqj4ygf5+CTIs+pjiXfjaWqLNuhSweqbeOcrqSt6l/LMC9rcDGx8jJysvMzc7P0NHS09TV1tfY2drb3N3e3+Dh4uPk5ebn6Onq6+zt7u/w8TwC9PX0qfb5+sD6/fcE/QAGvOOvoKCCCPcxsHdQQIp/Y+qRUEghX0OBFR1C3LJRkAPDChI7LrnnECRGgiUnSsxYUuQQlxNg1oBIM+VHCStPRrRJUSaMmhqBplw41OdDnhYVGC2xManSnM+E5lyqEmfHmx6HckR6k+qGplixgtQKRWrNi0+DcmVKdmTbmG9n8lwglC0+jR51bj261OvXoBn1lo1LFCpcwj8RP22IOKG/u44Nu41MMrIxyor5OiaQAAA7) no-repeat 0 0;width:17px;height:17px;float:left;margin-left:10px;overflow:hidden;line-height:100px">在新窗口打开</a><a id="imgzoom_resize" class="imgzoom_resize" href="javascipt:;" title="优化显示" style="background: url(data:image/gif;base64,R0lGODlhYQA4AKIAAAAAAP///0SXzJmZmf///wAAAAAAAAAAACH5BAEAAAQALAAAAABhADgAAAP/SLo7/o7JSRW8uOqKeyQdGG6k6I2ldq4ZA6XbR8rw9MyX+tZURDcDEa8XLO2Iwd9QWOwJl65m7Ia0SKFKIjQK7Fqz1OdWjMryZLfwkesdo1viLS0HNI919aMd9gt/r1p3ZHB7KXNraxyAS290cVhNaY2LEoWGlJWYfJGceUaamyAqj4ygf5+CTIs+pjiXfjaWqLNuhSweqbeOcrqSt6l/LMC9rcDGx8jJysvMzc7P0NHS09TV1tfY2drb3N3e3+Dh4uPk5ebn6Onq6+zt7u/w8TwC9PX0qfb5+sD6/fcE/QAGvOOvoKCCCPcxsHdQQIp/Y+qRUEghX0OBFR1C3LJRkAPDChI7LrnnECRGgiUnSsxYUuQQlxNg1oBIM+VHCStPRrRJUSaMmhqBplw41OdDnhYVGC2xManSnM+E5lyqEmfHmx6HckR6k+qGplixgtQKRWrNi0+DcmVKdmTbmG9n8lwglC0+jR51bj261OvXoBn1lo1LFCpcwj8RP22IOKG/u44Nu41MMrIxyor5OiaQAAA7) no-repeat -40px 0;width:17px;height:17px;float:left;margin-left:10px;overflow:hidden;line-height:100px">优化显示</a><a id="imgzoom_close" class="imgzoom_close" href="javascript:;" title="关闭" style="background: url(data:image/gif;base64,R0lGODlhYQA4AKIAAAAAAP///0SXzJmZmf///wAAAAAAAAAAACH5BAEAAAQALAAAAABhADgAAAP/SLo7/o7JSRW8uOqKeyQdGG6k6I2ldq4ZA6XbR8rw9MyX+tZURDcDEa8XLO2Iwd9QWOwJl65m7Ia0SKFKIjQK7Fqz1OdWjMryZLfwkesdo1viLS0HNI919aMd9gt/r1p3ZHB7KXNraxyAS290cVhNaY2LEoWGlJWYfJGceUaamyAqj4ygf5+CTIs+pjiXfjaWqLNuhSweqbeOcrqSt6l/LMC9rcDGx8jJysvMzc7P0NHS09TV1tfY2drb3N3e3+Dh4uPk5ebn6Onq6+zt7u/w8TwC9PX0qfb5+sD6/fcE/QAGvOOvoKCCCPcxsHdQQIp/Y+qRUEghX0OBFR1C3LJRkAPDChI7LrnnECRGgiUnSsxYUuQQlxNg1oBIM+VHCStPRrRJUSaMmhqBplw41OdDnhYVGC2xManSnM+E5lyqEmfHmx6HckR6k+qGplixgtQKRWrNi0+DcmVKdmTbmG9n8lwglC0+jR51bj261OvXoBn1lo1LFCpcwj8RP22IOKG/u44Nu41MMrIxyor5OiaQAAA7) no-repeat -80px 0;width:17px;height:17px;float:left;margin-left:10px;overflow:hidden;line-height:100px">关闭</a></span></p></div><div style="position:relative;"><div class="last" style="display: block;position: absolute;width: 80px;height: 100%;left:0;cursor: pointer;"><p style="background:#fff;color:#000;position:absolute;top:40%;left:0;margin:0;padding:5px;font-size:12px;display:none">上一张</p></div><div class="next" style="display: block;position: absolute;width: 80px;height: 100%;right:0;cursor: pointer;"><p style="background:#fff;color:#000;position:absolute;top:40%;right:0;margin:0;padding:5px;font-size:12px;display:none">下一张</p></div><img id="net" src="' + url + '" oncopy="return false;" style="width:100%;vertical-align: top;"></div></div><div class="imgzoom_shadow" style="position:fixed;width: 100%;height: 100%;background-color: rgb(0, 0, 0);top:0;left:0;opacity: 0.5;"/></div>';
+    imgb.innerHTML = '<div id="_imgzoom" style="width:' + imgwidth + 'px;position:fixed;top:'+imgtop+';left:'+imgleft+';transform: translate(-50%,-50%);background:#fff;z-index: 1;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select:       none;padding:5px 10px 25px;"><div class="header" style=""><p style="margin:0;padding:8px 0">滚动滚轮缩放图片<span style="float:right"><a id="imgzoom_imglink" class="imgzoom_imglink" target="_blank" title="在新窗口打开" href="' + url + '" style="background: url(data:image/gif;base64,R0lGODlhYQA4AKIAAAAAAP///0SXzJmZmf///wAAAAAAAAAAACH5BAEAAAQALAAAAABhADgAAAP/SLo7/o7JSRW8uOqKeyQdGG6k6I2ldq4ZA6XbR8rw9MyX+tZURDcDEa8XLO2Iwd9QWOwJl65m7Ia0SKFKIjQK7Fqz1OdWjMryZLfwkesdo1viLS0HNI919aMd9gt/r1p3ZHB7KXNraxyAS290cVhNaY2LEoWGlJWYfJGceUaamyAqj4ygf5+CTIs+pjiXfjaWqLNuhSweqbeOcrqSt6l/LMC9rcDGx8jJysvMzc7P0NHS09TV1tfY2drb3N3e3+Dh4uPk5ebn6Onq6+zt7u/w8TwC9PX0qfb5+sD6/fcE/QAGvOOvoKCCCPcxsHdQQIp/Y+qRUEghX0OBFR1C3LJRkAPDChI7LrnnECRGgiUnSsxYUuQQlxNg1oBIM+VHCStPRrRJUSaMmhqBplw41OdDnhYVGC2xManSnM+E5lyqEmfHmx6HckR6k+qGplixgtQKRWrNi0+DcmVKdmTbmG9n8lwglC0+jR51bj261OvXoBn1lo1LFCpcwj8RP22IOKG/u44Nu41MMrIxyor5OiaQAAA7) no-repeat 0 0;width:17px;height:17px;float:left;margin-left:10px;overflow:hidden;line-height:100px">在新窗口打开</a><a id="imgzoom_resize" class="imgzoom_resize" href="javascipt:;" title="优化显示" style="background: url(data:image/gif;base64,R0lGODlhYQA4AKIAAAAAAP///0SXzJmZmf///wAAAAAAAAAAACH5BAEAAAQALAAAAABhADgAAAP/SLo7/o7JSRW8uOqKeyQdGG6k6I2ldq4ZA6XbR8rw9MyX+tZURDcDEa8XLO2Iwd9QWOwJl65m7Ia0SKFKIjQK7Fqz1OdWjMryZLfwkesdo1viLS0HNI919aMd9gt/r1p3ZHB7KXNraxyAS290cVhNaY2LEoWGlJWYfJGceUaamyAqj4ygf5+CTIs+pjiXfjaWqLNuhSweqbeOcrqSt6l/LMC9rcDGx8jJysvMzc7P0NHS09TV1tfY2drb3N3e3+Dh4uPk5ebn6Onq6+zt7u/w8TwC9PX0qfb5+sD6/fcE/QAGvOOvoKCCCPcxsHdQQIp/Y+qRUEghX0OBFR1C3LJRkAPDChI7LrnnECRGgiUnSsxYUuQQlxNg1oBIM+VHCStPRrRJUSaMmhqBplw41OdDnhYVGC2xManSnM+E5lyqEmfHmx6HckR6k+qGplixgtQKRWrNi0+DcmVKdmTbmG9n8lwglC0+jR51bj261OvXoBn1lo1LFCpcwj8RP22IOKG/u44Nu41MMrIxyor5OiaQAAA7) no-repeat -40px 0;width:17px;height:17px;float:left;margin-left:10px;overflow:hidden;line-height:100px">优化显示</a><a id="imgzoom_close" class="imgzoom_close" href="javascript:;" title="关闭" style="background: url(data:image/gif;base64,R0lGODlhYQA4AKIAAAAAAP///0SXzJmZmf///wAAAAAAAAAAACH5BAEAAAQALAAAAABhADgAAAP/SLo7/o7JSRW8uOqKeyQdGG6k6I2ldq4ZA6XbR8rw9MyX+tZURDcDEa8XLO2Iwd9QWOwJl65m7Ia0SKFKIjQK7Fqz1OdWjMryZLfwkesdo1viLS0HNI919aMd9gt/r1p3ZHB7KXNraxyAS290cVhNaY2LEoWGlJWYfJGceUaamyAqj4ygf5+CTIs+pjiXfjaWqLNuhSweqbeOcrqSt6l/LMC9rcDGx8jJysvMzc7P0NHS09TV1tfY2drb3N3e3+Dh4uPk5ebn6Onq6+zt7u/w8TwC9PX0qfb5+sD6/fcE/QAGvOOvoKCCCPcxsHdQQIp/Y+qRUEghX0OBFR1C3LJRkAPDChI7LrnnECRGgiUnSsxYUuQQlxNg1oBIM+VHCStPRrRJUSaMmhqBplw41OdDnhYVGC2xManSnM+E5lyqEmfHmx6HckR6k+qGplixgtQKRWrNi0+DcmVKdmTbmG9n8lwglC0+jR51bj261OvXoBn1lo1LFCpcwj8RP22IOKG/u44Nu41MMrIxyor5OiaQAAA7) no-repeat -80px 0;width:17px;height:17px;float:left;margin-left:10px;overflow:hidden;line-height:100px">关闭</a></span></p></div><div style="position:relative;"><div class="last" style="display: block;position: absolute;width: 80px;height: 100%;left:0;cursor: pointer;"><p style="background:#fff;color:#000;position:absolute;top:40%;left:0;margin:0;padding:5px;font-size:12px;display:none">上一张</p></div><div class="next" style="display: block;position: absolute;width: 80px;height: 100%;right:0;cursor: pointer;"><p style="background:#fff;color:#000;position:absolute;top:40%;right:0;margin:0;padding:5px;font-size:12px;display:none">下一张</p></div><img id="net" src="' + url + '" oncopy="return false;" style="width:100%;vertical-align: top;"></div></div><div class="imgzoom_shadow" style="position:fixed;width: 100%;height: 100%;background-color: rgb(0, 0, 0);top:0;left:0;opacity: 0.5;"/></div>';
     if (window.innerWidth <= 1024 || window.innerHeight <= 630) {
       if (img.width == "auto") {
         resize();
@@ -43,9 +81,9 @@
         dom1.src = event.src;
         dom2.href = event.src;
         _imgz.parentElement.style.display = "block";
-        _imgz.style.top = "50%";
-        _imgz.style.left = "50%";
-        _imgz.style.width = img.width + 'px';
+        _imgz.style.top = top;
+        _imgz.style.left = left;
+        _imgz.style.width = width + 'px';
       }
     } else {
       console.error('缺少参数 src:Missing parameters "src"');
@@ -153,6 +191,13 @@
       dom.style.left = "50%";
     }
   } 
+  //关闭窗口
+  function hideMenu() {
+    var _imgzoom = document.getElementById('_imgzoom');
+    if (_imgzoom) {
+      _imgzoom.parentElement.style.display = "none";
+    }
+  }
   //移动事件 
   function imgMove() {
     var dom = document.getElementById('_imgzoom');
@@ -176,48 +221,34 @@
       dom.style.top = top + y + 'px';
       dom.style.left = left + x + 'px';
     }
-  } 
-
-
-  //设置选项
-  function option(e) {
-    if (e && e.width) {
-      img.width = e.width;
-    }
-  } 
-  //关闭窗口
-  function hideMenu() {
-    var _imgzoom = document.getElementById('_imgzoom');
-    if (_imgzoom) {
-      _imgzoom.parentElement.style.display = "none";
-    }
   }
-
-  if (isPE()) {
-    console.warn('手机端兼容性未适配，可能出现未知错误！！');
-  }
-  // 添加点击监控
-  function init(){
+  //初始函数
+  function start(){
     document.addEventListener('click', function (event) {
       var even = event || window.event;
       var target = even.target || even.srcElement;
-      if (target.nodeName == "IMG" && target.className == "imgZoom") {
+      if (target.nodeName == "IMG" && inStr(target.className,'imgZoom')) {
         open(target);
       }
-      if (target.className == "imgzoom_shadow" || target.className == "imgzoom_close") {
+      if ( inStr(target.className,'imgzoom_shadow') || inStr(target.className,'imgzoom_close')) {
         hideMenu();
       }
-      if (target.className == "imgzoom_resize") {
+      if (inStr(target.className,'imgzoom_resize')) {
         resize(event);
       }
     });
+    return{
+      setOption,
+      open,
+      close:hideMenu,
+    }
   }
+  return{
+    init:function(){
+      if(!imgObj){imgObj=start()};
+      return imgObj;
+    },
+  }
+})();
 
-  var imgZoom={
-    init,
-    option:img,
-    open:open,
-    resize:resize,
-    close:hideMenu,
-  }
   export default imgZoom;
