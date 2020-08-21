@@ -1,6 +1,6 @@
 {
   "name": "imgzoom-li",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "description": "一个可以查看图片(可以缩放，拖拽)的JS插件",
   "main": "./src/imgZoom.js",
   "keywords": [
