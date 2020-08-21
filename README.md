@@ -1,5 +1,3 @@
-# imgzoom-li
-
 <h1 align="center">imgzoom-li</h1>
 
 <p align="center">
@@ -12,11 +10,11 @@
 
 <img style="vertical-align: top;" src="https://raw.githubusercontent.com/lixianbin1/imgZoom/master/lib/202006011.jpg" alt="预览" >
 
-# 在线预览
+## 在线预览
 
 在线预览 https://lixianbin1.github.io/imgZoom/
 
-# 简单使用
+## 简单使用
 
 安装 imgzoom-li
 
@@ -35,9 +33,9 @@ import imgli from 'imgzoom-li'
 imgli.init()
 ```
 
-# 全局配置
+## 全局配置
 
-## width:string/number
+### width:string/number
 
 调整打开窗口的宽度;默认宽度为 1000px
 
@@ -51,7 +49,7 @@ const obj={
 imgobj.setOption=obj
 ```
 
-## top:string
+### top:string
 
 调整打开窗口中心的 top 定位;默认 top 为 50%
 
@@ -65,7 +63,7 @@ const obj={
 imgobj.setOption=obj
 ```
 
-## left:string
+### left:string
 
 调整打开窗口中心的 left 定位;默认 left 为 50%
 
@@ -79,9 +77,9 @@ const obj={
 imgobj.setOption=obj
 ```
 
-# 全局API
+## 全局API
 
-## imgzoomLi.init
+### imgzoomLi.init
 
 >imgzoomLi.init()
 
@@ -92,7 +90,7 @@ imgobj.setOption=obj
 const imgzom=imgli.init()
 ```
 
-## imgzoomLi.setOption
+### imgzoomLi.setOption
 
 >imgzoomLi.setOption()
 
@@ -109,7 +107,7 @@ imgzom.setOption({
 })
 ```
 
-## imgzoomLi.open
+### imgzoomLi.open
 
 >imgzoomLi.open(target)
 
@@ -123,7 +121,7 @@ const dome=document.getElementsByClassName('dome')[0]
 imgzom.open(dome)
 ```
 
-## imgzoomLi.close
+### imgzoomLi.close
 
 >imgzoomLi.close()
 
@@ -136,6 +134,6 @@ const imgzom=imgli.init()
 imgzom.close()
 ```
 
-# 兼容性
+## 兼容性
 
 目前 IE9+ ,手机端目前未测试，后面再考虑向后兼容。
