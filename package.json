@@ -3,7 +3,7 @@
   "version": "0.5.1",
   "description": "一个可以查看图片(可以缩放，拖拽)的JS插件",
   "main": "./src/imgZoom.js",
-  "keywords":[
+  "keywords": [
     "图片",
     "缩放",
     "缩放图片",
@@ -11,6 +11,7 @@
     "view picture",
     "img",
     "img zoom",
+    "imgzoom-li",
     "javascript"
   ],
   "scripts": {
@@ -26,7 +27,6 @@
     "url": "https://github.com/lixianbin1/imgZoom/issues"
   },
   "homepage": "https://github.com/lixianbin1/imgZoom#readme",
-
   "devDependencies": {},
   "dependencies": {}
 }

@@ -1,7 +1,7 @@
 // import imgli from 'imgzoom-li'
 // imgli.init()
 
-import imgli from './imgZoom.js'
+import imgli from './imgzoom-li.min.js'
 // imgli.option={
 //     'width':500,
 // }
