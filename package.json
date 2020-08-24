@@ -38,6 +38,6 @@
     "@babel/polyfill": "^7.10.1",
     "babel-polyfill": "^6.26.0",
     "html-webpack-plugin": "^4.3.0",
-    "imgzoom-li": "^0.5.1"
+    "imgzoom-li": "^0.6.5"
   }
 }
