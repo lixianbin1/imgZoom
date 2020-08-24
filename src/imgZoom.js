@@ -1,6 +1,6 @@
 /*!
- * imgZoom JavaScript Library v0.6.0
- * Date: 2020-08-21 15:26
+ * imgZoom JavaScript Library v0.6.5
+ * Date: 2020-08-24 09:53
  */
 "use strict";
 
