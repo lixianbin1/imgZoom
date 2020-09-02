@@ -2,41 +2,42 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 module.exports = {
-  entry: ["babel-polyfill",'./src/index.js'],//入口
+  entry: './src/index.js',//入口
   output: { // 输出
     filename: 'main.js',
     path: path.resolve(__dirname, 'static') // __dirname 当前路径的绝对路径
   },
   mode:'development',
-  // devServer: {
-  //   // contentBase: path.join(__dirname, 'src'), // path 路径拼接
-  //   // contentBase: './static',
-  //   compress: true,
-  //   port: 8080,
-  //   hot:true,
-  // },
+  devServer: {
+    contentBase: path.join(__dirname, 'src'), // path 路径拼接
+    contentBase: './static',
+    compress: true,
+    port: 8080,
+    hot:true,
+  },
   module: {
-    rules: [
+    rules: [ //规则
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-proposal-object-rest-spread']
+            presets: [
+              [
+              '@babel/preset-env',{
+                "targets":{
+                   "chrome": "58",
+                   "ie": "9"
+                },
+                "corejs": "3",
+                "useBuiltIns": "usage", // 按浏览器兼容引入兼容polyfill
+              }
+              ]
+            ],
+            plugins: ['@babel/plugin-transform-runtime']
           }
         }
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/,
-        use: [{
-            loader:'file-loader',
-            options:{
-                outputPath:"images/",
-                publicPath:"./images",
-            }
-        }]
       },
       {
         test: /\.(html)$/,
@@ -58,6 +59,16 @@ module.exports = {
             },
             minimize:true //生产模式
           }
+        }
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        use:{
+            loader:'file-loader',
+            options:{
+                outputPath:"images/",
+                publicPath:"./images",
+            }
         }
       }
     ]

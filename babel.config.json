@@ -4,13 +4,12 @@
     "@babel/preset-env",{
       "targets":{
          "chrome": "58",
-         "ie": "8"
+         "ie": "9"
       },
       "corejs": "3",
-      "useBuiltIns": "entry", // 按浏览器兼容引入兼容polyfill
+      "useBuiltIns": "usage", // 按浏览器兼容引入兼容polyfill
     }
     ]
   ],
-  "plugins": [
-  ]
+  "plugins": ["@babel/plugin-transform-runtime"]
 }
