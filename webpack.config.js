@@ -9,7 +9,6 @@ module.exports = {
   },
   mode:'development',
   devServer: {
-    contentBase: path.join(__dirname, 'src'), // path 路径拼接
     contentBase: './static',
     compress: true,
     port: 8080,
@@ -69,7 +68,7 @@ module.exports = {
                 outputPath:"images/",
                 publicPath:"./images",
             }
-        }
+        },
       }
     ]
   },

@@ -134,6 +134,10 @@ const imgzom=imgli.init()
 imgzom.close()
 ```
 
+## 项目介绍
+
+目前 master 分支用于介绍及应用 imazoom-li 插件；而 package 则用于开发打包和发布；
+
 ## 兼容性
 
 目前 IE9+ ,手机端目前未测试，后面再考虑向后兼容。
