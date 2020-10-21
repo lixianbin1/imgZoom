@@ -43,5 +43,6 @@
     "html-webpack-plugin": "^4.4.1",
     "imgzoom-li": "^0.6.5",
     "node-gyp": "^7.1.0"
-  }
+  },
+  "homepage": "./docs"
 }
