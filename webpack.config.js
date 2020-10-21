@@ -5,11 +5,11 @@ module.exports = {
   entry: './src/index.js',//入口
   output: { // 输出
     filename: 'main.js',
-    path: path.resolve(__dirname, 'docs') // __dirname 当前路径的绝对路径
+    path: path.resolve(__dirname, 'build') // __dirname 当前路径的绝对路径
   },
   mode:'development',
   devServer: {
-    contentBase: './docs',
+    contentBase: './build',
     compress: true,
     port: 8080,
     hot:true,

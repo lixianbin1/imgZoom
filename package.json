@@ -5,7 +5,8 @@
   "main": "./src/index.js",
   "scripts": {
     "build": "webpack -p",
-    "serve": "webpack-dev-server"
+    "serve": "webpack-dev-server",
+    "push": "sh deploy.sh"
   },
   "repository": {
     "type": "git",
@@ -44,5 +45,5 @@
     "imgzoom-li": "^0.6.5",
     "node-gyp": "^7.1.0"
   },
-  "homepage": "./docs"
+  "homepage": "."
 }
