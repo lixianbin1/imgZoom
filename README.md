@@ -134,9 +134,11 @@ const imgzom=imgli.init()
 imgzom.close()
 ```
 
-## 项目介绍
+## 分支介绍
 
-目前 master 分支用于介绍及应用 imazoom-li 插件；而 package 则用于开发打包和发布；
+master 分支用于演示应用 imazoom-li 插件；
+package 则用于 imgzoom-li 开发打包和发布；
+gh-pages 分支用于演示项目打包后的实例
 
 ## 兼容性
 
