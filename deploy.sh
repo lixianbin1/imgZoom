@@ -4,10 +4,10 @@
 set -e
 
 # 生成静态文件
-npx webpack -p
+npm run docs:build
 
 # 进入生成的文件夹
-cd build
+cd docs/.vuepress/dist
 
 # push
 git init
@@ -16,5 +16,8 @@ git commit -m 'deploy'
 git push -f git@github.com:lixianbin1/imgZoom.git master:gh-pages
 
 # 删除dist文件夹
-cd ../
-rm -rf build
+# cd ../
+# rm -rf build
+
+# 退出
+cd -
