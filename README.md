@@ -6,9 +6,32 @@
   <a href="https://www.npmjs.com/package/imgzoom-li"><img src="https://img.shields.io/npm/l/imgzoom-li.svg?sanitize=true" alt="License"></a>
 </p>
 
-一个可以查看图片(可以缩放，拖拽)的JS插件，无需引入额外 js 插件，简洁，方便，兼容 [文档介绍](https://lixianbin1.github.io/imgZoom/)
+一个可以查看图片(可以缩放，拖拽)的JS插件，无需引入额外 js 插件，简洁，方便，兼容 
 
 <img style="vertical-align: top;" src="https://raw.githubusercontent.com/lixianbin1/imgZoom/master/lib/202006011.jpg" alt="预览" >
+
+## 文档介绍
+
+文档介绍 https://lixianbin1.github.io/imgZoom/
+
+## 简单使用
+
+安装 imgzoom-li
+
+```
+npm install imgzoom-li
+```
+
+在需要查看的图片上添加 class="imgZoom"
+```
+<img class="imgZoom" src="./Img/202001034.png" alt="示例图片" >
+```
+
+在 script 中使用
+```
+import imgli from 'imgzoom-li'
+imgli.init()
+```
 
 ## 兼容性
 
