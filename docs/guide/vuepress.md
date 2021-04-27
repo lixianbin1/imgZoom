@@ -1,6 +1,4 @@
-# 编辑参考
-
-## VuePress
+# VuePress
 
 ### 链接语法
 

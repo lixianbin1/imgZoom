@@ -3,7 +3,7 @@
 
  imgZoom 一个用于介绍 imgzoom-li（PS：一个用于查看图片的插件，原本打算用 imgzoom 的名称，可是已经有人用了。） 插件库的打包，发布和维护的项目，可以通过它学习库的一个打包，发布和维护。
 
-## 分支介绍
+### 分支介绍
 
  - **master** 
 
@@ -17,7 +17,7 @@
 
 >发布的分支，上面是imgzoom-li插件的内容，是需要发布的内容
 
-## 命令介绍
+### 命令介绍
 
 打包命令，打包src目录下的演示项目，生成bui ld文件夹
 ```sh
@@ -39,9 +39,9 @@ npm run docs:dev # vuepress dev docs
 npm run docs:build # vuepress build docs
 ```
 
-## 引用支持
+### 引用支持
 
-### VuePress
+#### VuePress
 
 VuePress：一个快速构建文档型网站的工具，通过它用来构建介绍项目的静态网站。  [官网介绍](https://vuepress.vuejs.org/zh/)
 
@@ -50,7 +50,7 @@ VuePress：一个快速构建文档型网站的工具，通过它用来构建介
 yarn add -D vuepress  # npm install -D vuepress
 ```
 
-### Webpack
+#### Webpack
 
 Webpac：一个模块打包器。通过它用来生成打包后的代码。 [官网介绍](https://webpack.docschina.org/)
 

@@ -2,7 +2,7 @@
 
 本文会为你快速介绍一下imgzoom-li 的应用及过程
 
-## imgzoom-li 的使用
+### imgzoom-li 的使用
 
 1：安装 imgzoom-li
 

@@ -18,7 +18,8 @@ module.exports = {
   },
   themeConfig: {
     logo: '/img/logo01.png',
-    locales: {
+    displayAllHeaders: true, //展开所有
+    locales: { //多语言
       '/': {
         selectText: '选择语言',
         label: '简体中文',
@@ -33,62 +34,31 @@ module.exports = {
         nav: [
           { text: '指南', link: '/guide/' },
           { text: '配置', link: '/reference/'},
-          { text: '介绍', link: '/introduce/' }, 
           { text: 'GitHub', link: 'https://github.com/lixianbin1/imgZoom' }, 
         ],
-        sidebar:{
-          '/guide/':[
-            {
-              title: '指南',   // 必要的
-              collapsable: false, // 折叠：可选的, 默认值是 true,
-              sidebarDepth:2,
-              children: [
-                ['/guide/','介绍'],
-                ['/guide/page1','快速上手'],
-              ]
-            },
-            {
-              title: '文档',
-              collapsable: false,
-              sidebarDepth:2,
-              children: [
-                {
-                  title: '编辑参考',
-                  path: '/guide/going'
-                },
-              ],
-            }
-          ],
-          '/reference/':[
-            {
-              title: '配置',   // 必要的
-              sidebarDepth: 2,    // 可选的, 默认值是 1
-              collapsable: false, //展开所有组
-              initialOpenGroupIndex:-1,
-              displayAllHeaders:1,
-              children: [
-                ['/reference/','配置'],
-              ]
-            },
-          ],
-          '/introduce/':[
+        sidebar:[
             {
               title: '介绍',   // 必要的
-              collapsable: false, // 可选的, 默认值是 true,
-              sidebarDepth: 1,    // 侧边栏深度 默认值是 1
-              initialOpenGroupIndex:-1,
+              collapsable: false, // 折叠
               children: [
-                ['/introduce/','介绍'],
+                ['/guide/','imgzoom-li 是什么?'],
+                ['/guide/Started','快速上手'],
               ]
             },
-          ],
-        },
+            {
+              title: '相关',   // 必要的
+              collapsable: false,
+              children: [
+                ['/guide/introduce','imgZoom'],
+                ['/guide/vuepress','vuepress']
+              ]
+            },
+        ],
         lastUpdated: '最后更新时间',
       },
       '/en/': {
         selectText: 'Languages',
         label: 'English',
-        ariaLabel: 'Languages',
         editLinkText: 'Edit this page on GitHub',
         serviceWorker: {
           updatePopup: {
@@ -100,56 +70,26 @@ module.exports = {
         nav: [
           { text: 'Guide', link: '/en/guide/' },
           { text: 'reference', link: '/en/reference/'},
-          { text: 'introduce', link: '/en/introduce/' }, 
           { text: 'GitHub', link: 'https://github.com/lixianbin1/imgZoom' }, 
         ],
-        sidebar:{
-          '/en/guide/':[
+        sidebar:[
             {
-              title: 'Guide',   // 必要的
-              collapsable: false, // 折叠：可选的, 默认值是 true,
-              sidebarDepth:2,
+              title: 'Introduce',   // 必要的
+              collapsable: false, // 折叠
               children: [
-                ['/en/guide/','introduce'],
-                ['/en/guide/page1','Get Started'],
+                ['/guide/','What is imgzoom-li?'],
+                ['/guide/Started','Get Started'],
               ]
             },
             {
-              title: 'Document',
+              title: 'Relevant',   // 必要的
               collapsable: false,
-              sidebarDepth:2,
               children: [
-                {
-                  title: 'Edit reference',
-                  path: '/guide/going'
-                },
-              ],
-            }
-          ],
-          '/en/reference/':[
-            {
-              title: 'reference',   // 必要的
-              sidebarDepth: 2,    // 可选的, 默认值是 1
-              collapsable: false, //展开所有组
-              initialOpenGroupIndex:-1,
-              displayAllHeaders:1,
-              children: [
-                ['/en/reference/','reference'],
+                ['/guide/introduce','imgZoom'],
+                ['/guide/vuepress','vuepress']
               ]
             },
-          ],
-          '/en/introduce/':[
-            {
-              title: 'introduce',   // 必要的
-              collapsable: false, // 可选的, 默认值是 true,
-              sidebarDepth: 1,    // 侧边栏深度 默认值是 1
-              initialOpenGroupIndex:-1,
-              children: [
-                ['/en/introduce/','introduce'],
-              ]
-            },
-          ],
-        },
+        ],
         lastUpdated: 'Last Updated',
       },
     }
