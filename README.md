@@ -10,7 +10,7 @@
 
 <img style="vertical-align: top;" src="https://raw.githubusercontent.com/lixianbin1/imgZoom/master/lib/202006011.jpg" alt="预览" >
 
-## 文档介绍
+## 插件介绍
 
 文档介绍 https://lixianbin1.github.io/imgZoom/
 
@@ -31,6 +31,29 @@ npm install imgzoom-li
 ```
 import imgli from 'imgzoom-li'
 imgli.init()
+```
+
+## 项目介绍
+
+用于更新和介绍 imgzoom-li 插件的库；
+
+### 命令介绍
+
+```sh
+# 启动 webpack 本地服务，演示 imgzoom-li 的应用 
+yarn serve # npm run serve 
+
+# 启动 webpack 打包命令，演示项目的打包 
+yarn build # npm run build
+
+# 启动 vuepress 本地服务，演示 imgzoom-li 的文档 
+yarn docs:dev # npm run docs:dev
+
+# 启动 vuepress 打包命令，演示 imgzoom-li 的文档的打包
+yarn docs:build # npm run docs:build
+
+# 启动 vuepress 打包命令并更新在 gh-pages 演示分支
+yarn push # npm run push
 ```
 
 ## 兼容性
