@@ -1,48 +1,73 @@
 # VuePress
 
-### 链接语法
+### Link syntax
 
 ```md
-[转跳特定标题](/guide/page1.html#介绍) <!-- 跳转到特定标题位置 -->
-[bar - three](../bar/three.md) <!-- 具体文件可以使用 .md 结尾（推荐） -->
-[bar - four](../bar/four.html) <!-- 也可以用 .html -->
+
+[jump to specific title] (/ guide / page1. HTML # introduction) <-- Jump to a specific title position -- >
+
+[bar - three](../bar/three.md) <!-- Specific files can end with. MD (recommended) - >
+
+[bar - four](../bar/four.html) <!-- You can also use. HTML -- >
+
 ```
 
-### 提示主题
+### Prompt topic
 
-示例效果
+Example effect
+
 ::: tip
-这是一个提示
+
+This is a hint
+
 :::
 
 ::: warning
-这是一个警告
+
+This is a warning
+
 :::
 
 ::: danger
-这是一个危险警告
+
+This is a danger warning
+
 :::
 
 ::: details
-这是一个详情块，在 IE / Edge 中不生效
+
+This is a detail block and does not work in IE / edge
+
 :::
-示例代码
+
+Sample code
+
 ```md
+
 ::: tip
-这是一个提示
+
+This is a hint
+
 :::
 
 ::: warning
-这是一个警告
+
+This is a warning
+
 :::
 
 ::: danger
-这是一个危险警告
+
+This is a danger warning
+
 :::
 
 ::: details
-这是一个详情块，在 IE / Edge 中不生效
+
+This is a detail block and does not work in IE / edge
+
 :::
+
 ```
 
-目前的 imgzoom-li 正在试验中，请稍候！
+The current imgzoom Li is being tested, please wait!

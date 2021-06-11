@@ -1,19 +1,19 @@
-# imgzoom-li 是什么?
+# What is imgzoom Li?
 
-`imgzoom-li` 是一个用于查看网页图片的 `js`插件，可以切换，拖拽和缩放。使用简单，便捷和兼容性强。
+`Imgzoom` Li is a 'JS' plug-in for viewing web page pictures, which can switch, drag and zoom. It is easy to use, convenient and compatible.
 
 <img :src="$withBase('/imgzoom.jpg')" alt="imgzoom">
 
-### 它能为我做什么
+### What can it do for me
 
-imgzoom-li 一个可以查看图片(可以缩放，拖拽)的JS插件，无需引入额外 js 插件，简洁，方便，兼容。采用原生js编写。能广泛兼容多种浏览器，IE9+ 等低版本浏览器也可以兼容。对项目中的图片可以进行查看，放大，缩小及拖拽等操作。
+Imgzoom Li is a JS plug-in that can view pictures (zoom, drag) without introducing additional JS plug-ins. It is simple, convenient and compatible. It is written in native JS. It can be widely compatible with a variety of browsers, IE9 + and other low version browsers can also be compatible. The pictures in the project can be viewed, enlarged, reduced and dragged.
 
 <img :src="$withBase('/VPDemo.png')" alt="VPDemo">
 
-该文档可以全方位的为你演示 imgzoom-li 的各类配置和效果，通过项目的结构和注释，可以很好的了解和学习
+This document can demonstrate all kinds of configurations and effects of imgzoom Li for you in an all-round way. Through the structure and annotation of the project, you can understand and learn it well
 
-### 我需要为它做什么
+### What do I need to do for it
 
-imgzoom-li 采用原生js ，无需引入额外的js插件。可以即装立用。无需为此产生额外的负担。
+Imgzoom Li uses native JS without introducing additional JS plug-ins. It can be installed and used immediately. There is no need to put an extra burden on it.
 
-imgzoom 仅作为一个演示项目，无需额外的权限，仅需要克隆和点赞即可。如果你能为此添加你的学习过程中产生的问题和解决办法的话，那肯定是极好的，
+Imgzoom is only a demonstration project, without additional permissions. It only needs to clone and like. If you can add problems and solutions in your learning process, it will be excellent,

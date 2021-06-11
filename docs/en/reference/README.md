@@ -1,105 +1,147 @@
 ---
 sidebar: auto
 ---
-# 配置
- 
-## 基础配置
+
+# Configuration
+
+## Basic configuration
 
 ### width:string/number
 
-调整打开窗口的宽度;默认宽度为 1000px；
+Adjust the width of the open window; The default width is 1000px;
 
-示例：
+Example:
+
 ```js
+
 import imgli from 'imgzoom-li'
+
 const imgobj=imgli.init()
+
 const obj={
-  width:"1000"
+
+width:"1000"
+
 }
+
 imgobj.setOption=obj
+
 ```
 
 ### top:string
 
-调整打开窗口中心的 top 定位;默认 top 为 50%
+Adjust the top position of the center of the open window; The default top is 50%
 
-示例：
+Example:
+
 ```js
+
 import imgli from 'imgzoom-li'
+
 const imgobj=imgli.init()
+
 const obj={
-  top:"50%"
+
+top:"50%"
+
 }
+
 imgobj.setOption=obj
+
 ```
 
 ### left:string
 
-调整打开窗口中心的 left 定位;默认 left 为 50%
+Adjust the left position of the center of the open window; Default left is 50%
 
-示例：
+Example:
+
 ```js
+
 import imgli from 'imgzoom-li'
+
 const imgobj=imgli.init()
+
 const obj={
-  left:"50%"
+
+left:"50%"
+
 }
+
 imgobj.setOption=obj
+
 ```
 
-## 全局API
+## Global API
 
 ### imgzoomLi.init
 
 >imgzoomLi.init()
 
-初始化 imgzoom-li 实例；
+Initialize the imgzoom Li instance;
 
-示例：
+Example:
+
 ```js
+
 const imgzom=imgli.init()
+
 ```
 
 ### imgzoomLi.setOption
 
 >imgzoomLi.setOption()
 
-全局配置，用于设置imgzoom-li 的全局配置。
+Global configuration is used to set the global configuration of imgzoom Li.
 
-示例：
+Example:
+
 ```js
+
 const imgzom=imgli.init()
 
 imgzom.setOption({
-    width:1000,
-    top:'50%',
-    left:'50%' 
+
+width:1000 ,
+
+top:'50%',
+
+left:'50%'
+
 })
+
 ```
 
 ### imgzoomLi.open
 
 >imgzoomLi.open(target)
 
-可以用于打开指定 img 图片；img可以无需指定 class 为 imgZoom
+It can be used to open the specified img image; IMG does not need to specify class imgzoom
 
-示例：
+Example:
+
 ```js
+
 const imgzom=imgli.init()
 
 const dome=document.getElementsByClassName('dome')[0]
+
 imgzom.open(dome)
+
 ```
 
 ### imgzoomLi.close
 
 >imgzoomLi.close()
 
-可以用于关闭打开窗口。
+Can be used to close open windows.
 
-示例：
+Example:
+
 ```js
+
 const imgzom=imgli.init()
 
 imgzom.close()
+
 ```

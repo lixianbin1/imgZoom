@@ -1,26 +1,33 @@
-# 快速上手
+# Get started quickly
 
-本文会为你快速介绍一下imgzoom-li 的应用及过程
+This article will give you a quick introduction to the application and process of imgzoom Li
 
-### imgzoom-li 的使用
+### The use of imgzoom Li
 
-1：安装 imgzoom-li
+1: Install imgzoom Li
 
 ```sh
+
 yarn add imgzoom-li # npm install imgzoom-li
+
 ```
 
-2：打开你需要查看图片的html，在所有需要查看的图片的class上添加 imgZoom 
+2: Open the HTML of the pictures you need to view, and add imgzoom to the class of all the pictures you need to view
 
 ```html
-<img class="imgZoom" src="./Img/202001034.png" alt="示例图片" >
+
+< img class = "imgzoom" SRC =. / img / 202001034. PNG "ALT =" sample picture ">
+
 ```
 
-3：在js中调用 imgzoom-li
+3: calling imgzoom-li in JS
 
 ```javascript
+
 import imgli from 'imgzoom-li'
+
 imgli.init()
+
 ```
 
-之后你就可以尽情在页面中享受imgzoom-li 带来的图片查看效果了
+After that, you can enjoy the image viewing effect of imgzoom Li on the page
