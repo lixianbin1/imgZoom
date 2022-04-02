@@ -4,10 +4,12 @@
 set -e
 
 # 生成静态文件
-npm run docs:build
+# npm run docs:build 文档静态
 
 # 进入生成的文件夹
-cd docs/.vuepress/dist
+# cd docs/.vuepress/dist
+
+npm run build
 
 # push
 git init
