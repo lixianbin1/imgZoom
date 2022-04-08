@@ -6,11 +6,11 @@
   <a href="https://www.npmjs.com/package/imgzoom-li"><img src="https://img.shields.io/npm/l/imgzoom-li.svg?sanitize=true" alt="License"></a>
 </p>
 
-[En](./README_en.md) 
+[Zh](./README.md) 
 
 A JS plugin that can view images (zoom, drag and drop) without introducing additional js plugins, concise, convenient and compatible
 
-<img style="vertical-align: top;" src="https://raw.githubusercontent.com/lixianbin1/imgZoom/master/lib/202006011.jpg" alt="预览" >
+<img style="vertical-align: top;" src="https://lixianbin1.github.io/imgZoom/images/e0f860ed4c2e2a9902ae89d59218b195.jpg" alt="预览" >
 
 ## Plugin introduction
 
