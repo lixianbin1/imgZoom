@@ -8,17 +8,17 @@
 
 [En](./README_en.md) 
 
-一个可以查看图片(可以缩放，拖拽)的JS插件，无需引入额外 js 插件，简洁，方便，兼容 
+A JS plugin that can view images (zoom, drag and drop) without introducing additional js plugins, concise, convenient and compatible
 
 <img style="vertical-align: top;" src="https://raw.githubusercontent.com/lixianbin1/imgZoom/master/lib/202006011.jpg" alt="预览" >
 
-## 插件介绍
+## Plugin introduction
 
-插件演示 https://lixianbin1.github.io/imgZoom/
+Plugin demo https://lixianbin1.github.io/imgZoom/
 
-[更新日志](./log/README_zh-cn.md)
+[update log](./log/README_zh-cn.md)
 
-## 简单使用
+## start using
 
 安装 imgzoom-li
 
@@ -26,24 +26,24 @@
 npm install imgzoom-li
 ```
 
-在需要查看的图片上添加 class="imgZoom"
+Add on the picture you want to see class="imgZoom"
 ```
 <img class="imgZoom" src="./Img/202001034.png" alt="示例图片" >
 ```
 
-在 script 中使用
+use in script
 ```
 import imgli from 'imgzoom-li'
 imgli.init()
 ```
 
-## 基础配置
+## Basic configuration
 
 ### width:string/number
 
-调整打开窗口的宽度;默认宽度为 1000px；
+Adjust the width of the open window; the default width is 1000px;
 
-示例：
+Example：
 ```js
 import imgli from 'imgzoom-li'
 const imgobj=imgli.init()
@@ -55,9 +55,9 @@ imgobj.setOption=obj
 
 ### top:string
 
-调整打开窗口中心的 top 定位;默认 top 为 50%
+Adjust the top positioning in the center of the open window; the default top is 50%
 
-示例：
+Example：
 ```js
 import imgli from 'imgzoom-li'
 const imgobj=imgli.init()
@@ -69,9 +69,9 @@ imgobj.setOption=obj
 
 ### left:string
 
-调整打开窗口中心的 left 定位;默认 left 为 50%
+Adjust the left positioning of the center of the open window; the default left is 50%
 
-示例：
+Example：
 ```js
 import imgli from 'imgzoom-li'
 const imgobj=imgli.init()
@@ -81,15 +81,15 @@ const obj={
 imgobj.setOption=obj
 ```
 
-## 全局API
+## Global API
 
 ### imgzoomLi.init
 
 >imgzoomLi.init()
 
-初始化 imgzoom-li 实例；
+Initialize the imgzoom-li instance;
 
-示例：
+Example：
 ```js
 const imgzom=imgli.init()
 ```
@@ -98,9 +98,9 @@ const imgzom=imgli.init()
 
 >imgzoomLi.setOption()
 
-全局配置，用于设置imgzoom-li 的全局配置。
+Global configuration, used to set the global configuration of imgzoom-li.
 
-示例：
+Example：
 ```js
 const imgzom=imgli.init()
 
@@ -115,9 +115,9 @@ imgzom.setOption({
 
 >imgzoomLi.open(target)
 
-可以用于打开指定 img 图片；img可以无需指定 class 为 imgZoom
+Can be used to open the specified img image; img can be imgZoom without specifying class
 
-示例：
+Example：
 ```js
 const imgzom=imgli.init()
 
@@ -129,15 +129,15 @@ imgzom.open(dome)
 
 >imgzoomLi.close()
 
-可以用于关闭打开窗口。
+Can be used to close open windows.
 
-示例：
+Example：
 ```js
 const imgzom=imgli.init()
 
 imgzom.close()
 ```
 
-## 兼容性
+## Compatibility
 
-目前 IE9+ ,手机端目前未测试，后面再考虑向后兼容。
+At present, IE9+, the mobile terminal has not been tested at present, and backward compatibility will be considered later.

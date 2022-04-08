@@ -10,6 +10,7 @@ set -e
 # cd docs/.vuepress/dist
 
 npm run build
+cd build
 
 # push
 git init

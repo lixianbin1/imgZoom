@@ -45,7 +45,7 @@
     "babel-polyfill": "^6.26.0",
     "core-js": "^3.6.5",
     "html-webpack-plugin": "^4.4.1",
-    "imgzoom-li": "^0.6.5",
+    "imgzoom-li": "^0.8.1",
     "node-gyp": "^7.1.0"
   }
 }
