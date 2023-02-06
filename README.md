@@ -50,7 +50,7 @@ const imgobj=imgli.init()
 const obj={
   width:"1000"
 }
-imgobj.setOption=obj
+imgobj.setOption(obj)
 ```
 
 ### top:string
@@ -64,7 +64,7 @@ const imgobj=imgli.init()
 const obj={
   top:"50%"
 }
-imgobj.setOption=obj
+imgobj.setOption(obj)
 ```
 
 ### left:string
@@ -78,7 +78,7 @@ const imgobj=imgli.init()
 const obj={
   left:"50%"
 }
-imgobj.setOption=obj
+imgobj.setOption(obj)
 ```
 
 ## 全局API

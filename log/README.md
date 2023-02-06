@@ -8,3 +8,6 @@ Missing
 
 ## v0.8.1
  - Add the function of switching themes; modify the problem that the 'next' and 'previous' buttons are too large when accessed on the mobile phone;
+
+## v0.8.2
+ - Fix the wrong logic of the next function caused by adding the same file
