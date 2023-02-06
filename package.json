@@ -4,8 +4,8 @@
   "description": "一个可以查看图片(可以缩放，拖拽)的JS插件",
   "main": "./src/index.js",
   "scripts": {
-    "build": "webpack -p",
-    "serve": "webpack-dev-server",
+    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && webpack -p",
+    "serve": "SET NODE_OPTIONS=--openssl-legacy-provider && webpack-dev-server",
     "push": "sh deploy.sh",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
