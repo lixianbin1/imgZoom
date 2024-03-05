@@ -14,7 +14,7 @@ class ImgZoomLi {
   #cache={}     //缓存图片
   #size={}      //图片大小
   #CurrentImage //当前焦点
-  #title = "滚动缩放图片" //标题
+  #title = "imgZoom-li" //标题
   #width = "auto"
   #top = "50%"
   #left = "50%"
@@ -399,7 +399,7 @@ class ImgZoomLi {
       SetTitle:(str)=>{this.SetTitle(str)},
       Open:(ele)=>{this.Open(ele)},
       Close:()=>{this.Close()},
-      ThemeSwitch:(ele)=>{this.ThemeSwitch(ele)},
+      ThemeSwitch:(str)=>{this.ThemeSwitch(str)},
     })
   }
 }

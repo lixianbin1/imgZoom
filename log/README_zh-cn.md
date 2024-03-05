@@ -11,3 +11,7 @@
 
 ## v0.8.2
  - 修复添加相同文件导致的next函数的错误逻辑
+
+## v0.9.0
+ - 重新用Class类简单重构了下代码，添加了图片缓存base64的方案，防止反复请求相同图片。
+ - 新增加了属性`data-src`, 新增加了方法 `SetTitle` `ThemeSwitch`, 重新命名了方法 ,`SetOption`,`Open`,`Close`。

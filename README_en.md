@@ -10,134 +10,197 @@
 
 A JS plugin that can view images (zoom, drag and drop) without introducing additional js plugins, concise, convenient and compatible
 
-<img style="vertical-align: top;" src="https://lixianbin1.github.io/imgZoom/images/e0f860ed4c2e2a9902ae89d59218b195.jpg" alt="预览" >
+<img style="vertical-align: top;" src="https://lixianbin1.github.io/imgZoom/images/e0f860ed4c2e2a9902ae89d59218b195.jpg" alt="preview" >
 
 ## Plugin introduction
 
 Plugin demo https://lixianbin1.github.io/imgZoom/
 
-[update log](./log/README_zh-cn.md)
+[update log](./log/README.md)
 
-## start using
+## Simple to use
 
-安装 imgzoom-li
+Install imgzoom-li
 
 ```
 npm install imgzoom-li
 ```
 
-Add on the picture you want to see class="imgZoom"
-```
-<img class="imgZoom" src="./Img/202001034.png" alt="示例图片" >
+Add class="imgZoom" to the image you want to see
+```html
+<img class="imgZoom" src="./Img/202001034.png" alt="Example image" >
 ```
 
-use in script
-```
-import imgli from 'imgzoom-li'
-imgli.init()
+Used in script
+```js
+Import imgzoomli from 'imgzoom-li'
+imgzoomli.init().
 ```
 
 ## Basic configuration
 
-### width:string/number
+### title: String
 
-Adjust the width of the open window; the default width is 1000px;
+Set the default title of the pop-up window. Click on the image, the title will display the alt text of the image, and if it is not set, the pop-up title will be displayed
 
-Example：
+Example:
 ```js
-import imgli from 'imgzoom-li'
-const imgobj=imgli.init()
-const obj={
-  width:"1000"
+Import imgzoomli from 'imgzoom-li'
+const imgobj = imgzoomli.init()
+const option = {
+  Title: "imgZoom-li"
 }
-imgobj.setOption=obj
+imgobj.setOption
 ```
 
-### top:string
+### width: string/number
 
-Adjust the top positioning in the center of the open window; the default top is 50%
+adjust the width of the open window; The default width is auto; It will be calculated according to the built-in calculation method, and the appropriate size will be set for display.
 
-Example：
+Example:
 ```js
-import imgli from 'imgzoom-li'
-const imgobj=imgli.init()
-const obj={
-  top:"50%"
+Import imgzoomli from 'imgzoom-li'
+const imgobj = imgzoomli.init()
+const option = {
+  Width: "1000"
 }
-imgobj.setOption=obj
+imgobj.setOption
 ```
 
-### left:string
+### Top: String
 
-Adjust the left positioning of the center of the open window; the default left is 50%
+Adjust the top positioning of the center of the open window; The default top is 50%; The positioning is based on the center point of the pop-up window.
 
-Example：
+Example:
 ```js
-import imgli from 'imgzoom-li'
-const imgobj=imgli.init()
-const obj={
-  left:"50%"
+Import imgzoomli from 'imgzoom-li'
+const imgobj = imgzoomli.init()
+const option={
+  Top: "50%"
 }
-imgobj.setOption=obj
+imgobj.setOption
+```
+
+### left: String
+
+Adjust the left position in the center of the open window; The default left is 50%; The positioning is based on the center point of the pop-up window.
+
+Example:
+```js
+Import imgzoomli from 'imgzoom-li'
+const imgobj = imgzoomli.init()
+const option={
+  Left: "50%"
+}
+imgobj.setOption
+```
+
+### data-src: string
+
+It is used to deal with the problem of slow image loading (src is put into the compressed placeholder, and data-src exists in the main image), if it is set, the src path of the image will be actively replaced after the data-src is loaded.
+
+example
+```html
+<img class="imgZoom" src="./IMG/202001038.jpg" data-src="./IMG/202001033.jpg" alt="Image 2" >
+```
+
+### Subject: Strings
+
+Set the theme of the pop-up window, currently there are only day and night themes
+
+Example:
+```js
+Import imgzoomli from 'imgzoom-li'
+const imgobj = imgzoomli.init()
+const option={
+  Subject: "Day" // Day or Night
+}
+imgobj.setOption
 ```
 
 ## Global API
 
-### imgzoomLi.init
+### imgzoomli.init
 
->imgzoomLi.init()
+>imgzoomli.init()
 
 Initialize the imgzoom-li instance;
 
-Example：
+Example:
 ```js
-const imgzom=imgli.init()
+const imgobj = imgzoomli.init()
 ```
 
-### imgzoomLi.setOption
+### imgobj
 
->imgzoomLi.setOption()
+>imgobj。 SetTitle()
 
-Global configuration, used to set the global configuration of imgzoom-li.
+Global Configuration, which is used to set up the global configuration of imgzoom-li.
 
-Example：
+Example:
 ```js
-const imgzom=imgli.init()
+const imgobj = imgzoomli.init()
 
-imgzom.setOption({
-    width:1000,
-    top:'50%',
-    left:'50%' 
+imgobj。 SetTitle(“imgzoom-li”)
+```
+
+### imgobj. setting options
+
+>imgobj。 SetOption()
+
+Global Configuration, which is used to set up the global configuration of imgzoom-li.
+
+Example:
+```js
+const imgobj = imgzoomli.init()
+
+imgobj。 SetOption({
+  Width: 1000,
+  Top: '50%',
+  Left: '50%'
 })
 ```
 
-### imgzoomLi.open
+### imgobj. open
 
->imgzoomLi.open(target)
+>imgobj。 Open (Target)
 
-Can be used to open the specified img image; img can be imgZoom without specifying class
+Can be used to open a specified IMG picture; img can open the last open image by default without specifying the img element with the class imgZoom and look for the first setting element if it does not exist.
 
-Example：
+Example:
 ```js
-const imgzom=imgli.init()
+const imgobj = imgzoomli.init()
 
-const dome=document.getElementsByClassName('dome')[0]
-imgzom.open(dome)
+const dome=document.getElementsByClassName('Dome')[0]
+imgobj。 Open (Dome)
 ```
 
-### imgzoomLi.close
+### imgobj. close
 
->imgzoomLi.close()
+>imgobj。 Close()
 
 Can be used to close open windows.
 
-Example：
+Example:
 ```js
-const imgzom=imgli.init()
+const imgobj = imgzoomli.init()
 
-imgzom.close()
+imgobj.close()
+```
+
+### imgobj. Theme switch
+
+>imgobj。 ThemeSwitch (type)
+
+Used to switch the theme of imgzoom-li, the parameter is optional.
+
+Example:
+```js
+const imgobj = imgzoomli.init()
+
+imgobj。 ThemeSwitch('Days')
 ```
 
 ## Compatibility
 
-At present, IE9+, the mobile terminal has not been tested at present, and backward compatibility will be considered later.
+At present, IE9+ and mobile phones are not currently tested, and backward compatibility will be considered later.

@@ -11,3 +11,7 @@ Missing
 
 ## v0.8.2
  - Fix the wrong logic of the next function caused by adding the same file
+
+## v0.9.0
+ - The following code has been refactored with the Class class, and the base64 image cache scheme has been added to prevent repeated requests for the same image.
+ - Added property `data-src`, added method `SetTitle` and `ThemeSwitch`, renamed method, `SetOption`, `Open`, `Close`.
