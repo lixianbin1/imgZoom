@@ -20,4 +20,8 @@ Missing
  - In order to ensure the compatibility of older browsers, the ES6 code was changed to the ES5 code.
 
 ## v0.9.2
- -  Eliminate ES6 `?.` optional chain
+ - Eliminate ES6 `?.` optional chain
+
+## v0.9.3
+ - Disable the cache of 'svg' images, and set the relevant configuration of svg cache 'svgCache' (this field is incorrect, temporarily invalid, wait for the next version to modify and push), and disable it by default
+ - Added 'typescript' support to prevent 'typescript' items from being type-incorrect.

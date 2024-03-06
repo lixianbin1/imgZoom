@@ -1,5 +1,5 @@
-import imgli from 'imgzoom-li'
-// import imgli from './imgZoom.min.js'
+// import imgli from 'imgzoom-li'
+import imgli from './imgZoom.min.js'
 console.log(imgli)
 const imgobj=imgli.init()
 imgobj.SetOption({
