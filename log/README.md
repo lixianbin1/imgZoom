@@ -18,3 +18,6 @@ Missing
 
 ## v0.9.1
  - In order to ensure the compatibility of older browsers, the ES6 code was changed to the ES5 code.
+
+## v0.9.2
+ -  Eliminate ES6 `?.` optional chain
