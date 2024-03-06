@@ -15,3 +15,6 @@ Missing
 ## v0.9.0
  - The following code has been refactored with the Class class, and the base64 image cache scheme has been added to prevent repeated requests for the same image.
  - Added property `data-src`, added method `SetTitle` and `ThemeSwitch`, renamed method, `SetOption`, `Open`, `Close`.
+
+## v0.9.1
+ - In order to ensure the compatibility of older browsers, the ES6 code was changed to the ES5 code.

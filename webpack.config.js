@@ -23,16 +23,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              [
-              '@babel/preset-env',{
-                "targets":{
-                   "chrome": "58",
-                   "ie": "9"
-                },
-                "corejs": "3",
-                "useBuiltIns": "usage", // 按浏览器兼容引入兼容polyfill
-              }
-              ]
+              ['@babel/preset-env',]
             ],
             plugins: ['@babel/plugin-transform-runtime']
           }
