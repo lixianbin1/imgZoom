@@ -350,7 +350,7 @@ function SetOption(obj){
   obj.top?_top=obj.top:""
   obj.left?_left=obj.left:""
   obj.theme?_theme=obj.theme:""
-  obj.svgCache?_svgCache = obj.svg:""
+  obj.svgCache?_svgCache = obj.svgCache:""
 }
 
 //设置标题
