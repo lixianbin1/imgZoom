@@ -204,3 +204,33 @@ imgobj。 ThemeSwitch('Days')
 ## Compatibility
 
 At present, IE9+ and mobile phones are not currently tested, and backward compatibility will be considered later.
+
+## Contributing to imgZoom
+
+Thank you for considering contributing to this project! Whether you want to report a bug, request a feature, or submit a pull request, your involvement is highly appreciated.
+
+[Zh](./CONTRIBUTING.md) 
+
+### Ways to Contribute
+
+- **Reporting Bugs:** If you encounter any issues or unexpected behavior, please open a GitHub issue with detailed information about the problem, including steps to reproduce.
+- **Requesting Features:** Feel free to submit a GitHub issue to suggest new features or improvements you'd like to see.
+- **Submitting Pull Requests:** We welcome pull requests for bug fixes, enhancements, or new features. Make sure to follow the guidelines below when submitting a pull request.
+
+### Pull Request Guidelines
+
+1. **Fork the Repository:** If you haven't already, fork the repository to your GitHub account and create a new branch for your feature or fix.
+2. **Commit Guidelines:** Ensure your commits are descriptive and follow the project's conventions. Please refer to the [CONTRIBUTING.md](./CONTRIBUTING_en.md) file for specific guidelines.
+3. **Code Style:** Maintain consistent code style with the rest of the project. If applicable, adhere to the coding standards specified in the project.
+4. **Test Code:** If your contribution involves code changes, make sure to add tests and ensure existing tests pass.
+5. **Submit Pull Request:** Once everything is ready, submit a pull request to the main repository's `master` branch.
+
+### Questions and Support
+
+If you have any questions or need assistance, don't hesitate to reach out to [lixianbin1](xianbin.me@qq.com).
+
+Thank you for contributing!
+
+---
+
+Feel free to customize the content to better fit your project's specific guidelines and requirements. Let me know if you need further assistance or adjustments!
