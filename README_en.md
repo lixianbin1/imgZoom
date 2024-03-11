@@ -227,7 +227,7 @@ Thank you for considering contributing to this project! Whether you want to repo
 
 ### Questions and Support
 
-If you have any questions or need assistance, don't hesitate to reach out to [lixianbin1](xianbin.me@qq.com).
+If you have any questions or need assistance, don't hesitate to reach out to lixianbin1 <xianbin.me@qq.com>.
 
 Thank you for contributing!
 
