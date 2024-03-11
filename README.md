@@ -231,7 +231,7 @@ imgobj.ThemeSwitch('day')
 
 ### 问题和支持
 
-如果您有任何问题或需要帮助，请随时联系[lixianbin1](xianbin.me@qq.com)。
+如果您有任何问题或需要帮助，请随时联系 lixianbin1 <xianbin.me@qq.com>。
 
 感谢您的贡献！
 
