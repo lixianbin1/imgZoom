@@ -9,6 +9,7 @@ yarn-error.log*
 
 .gitignore
 node_modules/
+build/
 docs
 package-lock.json
 webpack.config.js
