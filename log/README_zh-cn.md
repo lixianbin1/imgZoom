@@ -25,3 +25,6 @@
 ## v0.9.3
  - 取消`svg`图片的缓存，设置svg缓存的相关配置`svgCache`(该字段错误，暂时无效，等下个版本修改推送)，默认关闭
  - 添加 `typescript` 支持，防止 `typescript` 项目的类型错误。
+
+## v0.9.4
+ - 开放 `svgCache` 字段, 压缩 `iconBase64`
