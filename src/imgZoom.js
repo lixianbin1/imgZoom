@@ -227,10 +227,13 @@ function bing(){
 //判断class字符串是否存在imgzoom
 function inStr(str, string) {
   var isin = false;
-  var arr = str.split(' ');
-  for (var i in arr) {
-    if (arr[i] == string) {
-      isin = true;
+  if (typeof str === "string") {
+    var arr = str.split(' ');
+    for (var i in arr) {
+      if (arr[i] === string) {
+        isin = true;
+        break;
+      }
     }
   }
   return isin;
