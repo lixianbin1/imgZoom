@@ -28,3 +28,6 @@ Missing
 
 ## v0.9.4
  - Open `svgCache` field, compress `iconBase64`
+
+## V0.9.5
+- Error in `split` method caused by incorrect modification of `inStr` parameter type
